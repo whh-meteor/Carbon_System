@@ -52,7 +52,6 @@ export default {
 		layoutIfameView: '内嵌 iframe',
 		SoilErosionK:"土壤侵蚀",
 		CVA:"变化向量检测方法",
-		 
 		ServiceManage:"服务管理",
 		AlrithmList:"算法列表",
 		DataList:"数据列表",
@@ -60,7 +59,8 @@ export default {
 		shpToPG:"shp数据入库",
 		dataToGeoserver:"GeoServer数据发布",
 		servicePublish:"处理服务发布",
-		out2excel:"解析SWMM输出"
+		out2excel:"解析SWMM输出",
+		Carbon:"碳源汇服务"
 	},
 	staticRoutes: {
 		signIn: '登录',

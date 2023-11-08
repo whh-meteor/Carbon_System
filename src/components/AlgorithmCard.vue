@@ -57,6 +57,23 @@
                 </el-card>
                 
             </el-col>
+            <el-col :span="7" style="margin-left: 20px;">
+                <el-card :body-style="{ padding: '0px' }" class="elcard">
+                    <div @click="Carbon">
+                        <img src="../assets/img/carbon.jpg" class="image">
+                        <div style="padding: 14px;">
+                            <span>碳源汇在线处理服务</span>
+                            <div class="bottom clearfix">
+                                <time class="time">碳源汇在线处理</time>
+                                <el-button type="text" class="button"><el-link>查看<i class="el-icon-view el-icon--right"></i>
+                                    </el-link></el-button>
+                            </div>
+                        </div>
+                    </div>
+
+                </el-card>
+                
+            </el-col>
         </el-row>
     </div>
 </template>
@@ -77,6 +94,9 @@ export default {
         },
         out2excel(){
             this.$router.push("/out2excel")
+        },
+        Carbon(){
+            this.$router.push("/Carbon")
         }
     }
 }

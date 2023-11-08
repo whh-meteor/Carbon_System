@@ -43,6 +43,14 @@ const staticRoutes = [
 		},
 	},
 	{
+		path: '/Carbon',
+		name: 'Carbon',
+		component: () => import('@/layout/Carbon/Carbon.vue'),
+		meta: {
+			title: '碳源汇服务',
+		},
+	},
+	{
 		path: '/404',
 		name: 'notFound',
 		component: () => import('@/views/error/404.vue'),
