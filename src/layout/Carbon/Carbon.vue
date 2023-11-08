@@ -2,8 +2,6 @@
   <div id="root">
     <div id="map" ref="map"></div>
   </div>
-
-
 </template>
 
 <script>
@@ -21,10 +19,9 @@ import {
 import TileLayer from "ol/layer/Tile";
 import * as olProj from "ol/proj";
 import XYZ from "ol/source/XYZ";
-export default {
-  components: {
 
-  },
+export default {
+  components: {},
   name: "MapContainer",
   data() {
     return {
@@ -54,8 +51,6 @@ export default {
           zoom: true
         }).extend([])
       });
-
-
       this.map.addControl(new FullScreen());
       this.map.addControl(new ScaleLine());
       this.map.addControl(new ZoomSlider());
