@@ -1,0 +1,299 @@
+{
+	"code": 0,
+	"data": [
+		{
+			"path": "/home",
+			"name": "home",
+			"component": "home",
+			"meta": {
+				"title": "message.router.home",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": true,
+				"isIframe": false,
+				"roles": ["admin", "common"],
+				"icon": "iconfont icon-shouye"
+			}
+		},
+		{
+			"path": "/ServiceManage",
+			"name": "ServiceManage",
+			"component": "layout/routerView/parent",
+			"meta": {
+				"title": "message.router.ServiceManage",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["admin", "common"],
+				"icon": "iconfont icon-gongju"
+			},
+			"children": [
+				{
+					"path": "/ServiceManage",
+					"name": "ServiceManage",
+					"component": "layout/Manage/ServiceManage",
+					"meta": {
+						"title": "message.router.AlrithmList",
+						"isLink": "",
+						"isHide": false,
+						"isKeepAlive": true,
+						"isAffix": false,
+						"isIframe": false,
+						"roles": ["admin", "common"],
+						"icon": "iconfont icon-gongju"
+					}
+				},
+				{
+					"path": "/DataList",
+					"name": "DataList",
+					"component": "layout/Manage/DataList",
+					"meta": {
+						"title": "message.router.DataList",
+						"isLink": "",
+						"isHide": false,
+						"isKeepAlive": true,
+						"isAffix": false,
+						"isIframe": false,
+						"roles": ["admin", "common"],
+						"icon": "iconfont icon-gongju"
+					}
+				}
+
+			]
+		},
+		{
+			"path": "/DataPubilsh",
+			"name": "DataPubilsh",
+			"component": "layout/routerView/parent",
+			"meta": {
+			 "title": "message.router.DataPubilsh",
+			 "isLink": "",
+			 "isHide": false,
+			 "isKeepAlive": true,
+			 "isAffix": false,
+			 "isIframe": false,
+			 "roles": ["admin", "common"],
+			 "icon": "iconfont icon-gongju"
+			},
+			"children": [
+			 {
+			  "path": "/shpDatabase",
+			  "name": "shpToPG",
+			  "component": "layout/Database/shpDatabase",
+			  "meta": {
+			   "title": "message.router.shpToPG",
+			   "isLink": "",
+			   "isHide": false,
+			   "isKeepAlive": true,
+			   "isAffix": false,
+			   "isIframe": false,
+			   "roles": ["admin", "common"],
+			   "icon": "iconfont icon-gongju"
+			  }
+			 },
+			 {
+			  "path": "/pubGeoTIFF",
+			  "name": "dataToGeoserver",
+			  "component": "layout/Database/pubGeoTIFF",
+			  "meta": {
+			   "title": "message.router.dataToGeoserver",
+			   "isLink": "",
+			   "isHide": false,
+			   "isKeepAlive": true,
+			   "isAffix": false,
+			   "isIframe": false,
+			   "roles": ["admin", "common"],
+			   "icon": "iconfont icon-gongju"
+			  }
+			 }
+		 
+			]
+		   },
+		   {
+			"path": "/servicePublish",
+			"name": "servicePublish",
+			"component": "pages/formAdapt/index",
+			"meta": {
+				"title": "message.router.servicePublish",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["admin", "common"],
+				"icon": "iconfont icon-gerenzhongxin"
+			}
+		},
+			
+		{
+			"path": "/menu",
+			"name": "menu",
+			"component": "layout/routerView/parent",
+			"redirect": "/menu/menu1",
+			"meta": {
+				"title": "message.router.menu",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["admin", "common"],
+				"icon": "iconfont icon-caidan"
+			},"children": [
+				{
+					"path": "/menu/menu1",
+					"name": "menu1",
+					"component": "layout/routerView/parent",
+					"redirect": "/menu/menu1/menu11",
+					"meta": {
+						"title": "message.router.menu1",
+						"isLink": "",
+						"isHide": false,
+						"isKeepAlive": true,
+						"isAffix": false,
+						"isIframe": false,
+						"roles": ["admin", "common"],
+						"icon": "iconfont icon-caidan"
+					},
+					"children": [
+						
+						{
+							"path": "/SoilErosionK",
+							"name": "SoilErosionK",
+							"component": "layout/Arithmetic/SoilErosionK",
+							"meta": {
+								"title": "message.router.SoilErosionK",
+								"isLink": "",
+								"isHide": false,
+								"isKeepAlive": true,
+								"isAffix": false,
+								"isIframe": false,
+								"roles": ["admin", "common"],
+								"icon": "iconfont icon-gerenzhongxin"
+							}
+						},{
+							"path": "/CVA",
+							"name": "CVA",
+							"component": "layout/Arithmetic/CVA",
+							"meta": {
+								"title": "message.router.CVA",
+								"isLink": "",
+								"isHide": false,
+								"isKeepAlive": true,
+								"isAffix": false,
+								"isIframe": false,
+								"roles": ["admin", "common"],
+								"icon": "iconfont icon-gerenzhongxin"
+							}
+						}
+						
+					]
+				},
+				{
+					"path": "/menu/menu2",
+					"name": "menu2",
+					"component": "layout/routerView/parent",
+					"redirect": "/menu/menu1/menu11",
+					"meta": {
+						"title": "message.router.PythonMenu2",
+						"isLink": "",
+						"isHide": false,
+						"isKeepAlive": true,
+						"isAffix": false,
+						"isIframe": false,
+						"roles": ["admin", "common"],
+						"icon": "iconfont icon-caidan"
+					
+					},
+					"children": [
+						
+						{
+							"path": "/out2excel",
+							"name": "out2excel",
+							"component": "layout/Arithmetic/out2excel",
+							"meta": {
+								"title": "message.router.out2excel",
+								"isLink": "",
+								"isHide": false,
+								"isKeepAlive": true,
+								"isAffix": false,
+								"isIframe": false,
+								"roles": ["admin", "common"],
+								"icon": "iconfont icon-gerenzhongxin"
+							}
+						} 
+						
+					]
+				}
+			]
+			
+		},
+		{
+			"path": "/pages",
+			"name": "pagesIndex",
+			"component": "layout/routerView/parent",
+			"redirect": "/pages/formAdapt",
+			"meta": {
+				"title": "message.router.pagesIndex",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["admin", "common"],
+				"icon": "iconfont icon-fuzhiyemian"
+			},
+			"children": [
+				{
+					"path": "/pages/formAdapt",
+					"name": "pagesFormAdapt",
+					"component": "pages/formAdapt/index",
+					"meta": {
+						"title": "message.router.pagesFormAdapt",
+						"isLink": "",
+						"isHide": false,
+						"isKeepAlive": true,
+						"isAffix": false,
+						"isIframe": false,
+						"roles": ["admin", "common"],
+						"icon": "iconfont icon-biaodan"
+					}
+				}
+			]
+		},
+	
+		{
+			"path": "/personal",
+			"name": "personal",
+			"component": "personal/index",
+			"meta": {
+				"title": "message.router.personal",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["admin", "common"],
+				"icon": "iconfont icon-gerenzhongxin"
+			}
+		},
+		{
+			"path": "/link",
+			"name": "layoutLinkView",
+			"component": "layout/routerView/parent",
+			"meta": {
+				"title": "message.router.layoutLinkView",
+				"isLink": "https://element-plus.gitee.io/#/zh-CN/component/installation",
+				"isHide": false,
+				"isKeepAlive": false,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["admin"],
+				"icon": "iconfont icon-caozuo-wailian"
+			}
+		}
+	]
+}

@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21ad45"],{bcd2:function(p,n,o){p.exports=o.p+"img/avator.abbfb124.jpg"}}]);

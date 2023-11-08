@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0d6ef4"],{7555:function(n,t,u){"use strict";u.r(t),u.d(t,"useLoginApi",(function(){return s}));var e=u("b775");function s(){return{signIn:n=>Object(e["default"])({url:"/user/signIn",method:"post",data:n}),signOut:n=>Object(e["default"])({url:"/user/signOut",method:"post",data:n})}}}}]);
