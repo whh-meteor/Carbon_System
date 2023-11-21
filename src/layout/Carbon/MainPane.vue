@@ -2,7 +2,7 @@
     <div :style="defaultHeightSide">
       <splitpanes class="default-theme" horizontal :push-other-panes="false" :style="contentHeight" @resize="resize">
     
-    <pane>
+    <pane size="80">
       <splitpanes :push-other-panes="false"  @resize="resize">
         <pane size="25">
           <span>2</span>
@@ -17,7 +17,7 @@
         </pane>
       </splitpanes>
     </pane>
-    <pane>
+    <pane size="20">
       <span>5</span>
     </pane>
   </splitpanes>
