@@ -1,69 +1,93 @@
 <template>
-  <div id="root">
-    <div id="map" ref="map"></div>
-  </div>
+  <el-container>
+    <el-header>
+      <headtop></headtop>
+    </el-header>
+    <el-main>
+
+      <splitpanes class="default-theme" horizontal :push-other-panes="false" style="height: 800px">
+        <!-- <pane>
+    <span>1</span>
+  </pane> -->
+        <pane>
+          <splitpanes :push-other-panes="false">
+            <pane>
+              <span>2</span>
+            </pane>
+            <pane>
+              <span>
+                <BaseOlMap v-bind:geoserverData="BaseMapData" ></BaseOlMap>
+              </span>
+            </pane>
+            <pane>
+              <span>4</span>
+            </pane>
+          </splitpanes>
+        </pane>
+        <pane>
+          <span>5</span>
+        </pane>
+      </splitpanes>
+
+    </el-main>
+  </el-container>
 </template>
 
 <script>
-import "ol/ol.css";
-import {
-  Map,
-  View
-} from "ol";
-import {
-  defaults as defaultControls,
-  FullScreen,
-  ScaleLine,
-  ZoomSlider
-} from "ol/control";
-import TileLayer from "ol/layer/Tile";
-import * as olProj from "ol/proj";
-import XYZ from "ol/source/XYZ";
-
+// In your Vue component.
+import { Splitpanes, Pane } from 'splitpanes'
+import 'splitpanes/dist/splitpanes.css'
+import BaseOlMap from './Map.vue';
+import headtop from "./HeadTop.vue"
 export default {
-  components: {},
+
+  components: { Splitpanes, Pane, headtop, BaseOlMap },
   name: "MapContainer",
   data() {
     return {
-      map: null
+      map: null,
+      activeIndex2: '1',
+      BaseMapData: {//传参给BaseMap
+        //加载WMS输入参数
+        workArea: '',
+        layers: '',
+        //发布TIF参数
+        ws2: '',
+        store_layer2: '',
+        tifUrl2: '',
+        //绘制交互参数
+        drawInterration: '',
+        drawInterrationBinary: '',
+        T1: '',
+        T2: '',
+        RasterInfo: null,//栅格值
+        layerStore: [],
+        changeMapHeight:''
+
+      },
+
     };
   },
   methods: {
-    /**
-     * 初始化一个 openlayers 地图
-     */
-    initMap() {
-      this.map = new Map({
-        target: "map", //绑定dom元素进行渲染
-        layers: [
-          new TileLayer({
-            source: new XYZ({
-              url: "https://wprd0{1-4}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&style=7&x={x}&y={y}&z={z}",
-            }),
-          }),
 
-        ], //配置地图数据源
-        view: new View({
-          center: olProj.fromLonLat([108.945951, 34.465262]),
-          zoom: 10,
-        }), //配置地图显示的options配置（坐标系，中心点，缩放级别等）
-        controls: defaultControls({
-          zoom: true
-        }).extend([])
-      });
-      this.map.addControl(new FullScreen());
-      this.map.addControl(new ScaleLine());
-      this.map.addControl(new ZoomSlider());
-    },
+
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
+    }
 
   },
   mounted() {
-    this.initMap();
+
   }
 };
 </script>
 
-<style>
+<style scoped>
+* {
+  padding: 0;
+  margin: 0;
+}
+
 #map {
   height: 700px;
   width: 100%;

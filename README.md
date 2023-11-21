@@ -11,3 +11,7 @@
 - 查看开发文档：<a href="https://lyt-top.gitee.io/vue-next-admin-doc-preview" target="_blank">vue-next-admin-doc</a>
 
  
+
+ #### 窗口分割组件
+ npm i splitpanes@legacy 
+ https://antoniandre.github.io/splitpanes/
