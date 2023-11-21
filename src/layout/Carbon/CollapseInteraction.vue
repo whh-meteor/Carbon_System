@@ -1,5 +1,7 @@
 <template>
     <div class="collapse">
+
+        
         <el-collapse v-model="activeNames" @change="handleChange">
     <el-collapse-item   name="1">
         <template slot="title">
@@ -11,7 +13,7 @@
         <template slot="title">
             <i class="header-icon el-icon-more"></i>     服务(Service)
     </template>
-      <div></div>
+      <ServicesChain></ServicesChain>
       <div></div>
     </el-collapse-item>
     <el-collapse-item   name="3">
@@ -33,18 +35,23 @@
     </div>
 </template>
   <script>
+  import ServicesChain from './ServicesChain.vue';
+ 
+ 
     export default {
-      data() {
+ 
+    data() {
         return {
-          activeNames: ['1']
+            activeNames: ['2']
         };
-      },
-      methods: {
+    },
+    methods: {
         handleChange(val) {
-          console.log(val);
+            console.log(val);
         }
-      }
-    }
+    },
+    components: { ServicesChain }
+}
   </script>
 
   <style>

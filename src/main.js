@@ -12,7 +12,8 @@ import { globalComponentSize } from '@/utils/componentSize.js';
 import VueCookies from 'vue-cookies'
 import Axios from 'axios'
 
- 
+import DAGBoard from 'dag-board'
+Vue.use(DAGBoard)
 
 
 Vue.use(VueCookies);
