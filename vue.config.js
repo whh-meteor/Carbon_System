@@ -1,4 +1,5 @@
 module.exports = {
+
 	productionSourceMap: false,
 	publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
 	lintOnSave: false,
@@ -20,6 +21,7 @@ module.exports = {
 			},
 		},
 	},
+	
 	chainWebpack(config) {
 		// 移除打包后 index.html 所有打包好的文件都预加载行为
 		config.plugins.delete('preload');

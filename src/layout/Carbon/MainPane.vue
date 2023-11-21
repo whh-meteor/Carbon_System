@@ -13,12 +13,12 @@
           </span>
         </pane>
         <pane size="25" >
-          <span>4</span>
+          <span>      <charts3dbar></charts3dbar></span>
         </pane>
       </splitpanes>
     </pane>
     <pane size="20">
-      <span>5</span>
+chart 
     </pane>
   </splitpanes>
  
@@ -29,20 +29,20 @@
     </div>
   </template>
   <script>
+
  // In your Vue component.
 import { Splitpanes, Pane } from 'splitpanes'
 import 'splitpanes/dist/splitpanes.css'
 import BaseOlMap from './Map.vue';
-  
+import charts3dbar from "./3dCharts.vue"
   var layer = new Array(); //map中的图层数组
   var layerName = new Array(); //图层名称数组
   var layerVisibility = new Array(); //图层可见属性数组
   
   export default {
-    components: { Splitpanes, Pane, BaseOlMap },
+    components: { Splitpanes, Pane, BaseOlMap,charts3dbar},
     data () {
       return {
-  
  
         baseurl: "http://172.31.41.229:8080",//data url
  

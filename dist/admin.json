@@ -224,6 +224,21 @@
 								"roles": ["admin", "common"],
 								"icon": "iconfont icon-gerenzhongxin"
 							}
+						} ,
+						{
+							"path": "/Carbon",
+							"name": "Carbon",
+							"component": "layout/Carbon/Carbon",
+							"meta": {
+								"title": "message.router.Carbon",
+								"isLink": "",
+								"isHide": false,
+								"isKeepAlive": true,
+								"isAffix": false,
+								"isIframe": false,
+								"roles": ["admin", "common"],
+								"icon": "iconfont icon-gerenzhongxin"
+							}
 						} 
 						
 					]

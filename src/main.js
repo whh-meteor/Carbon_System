@@ -11,6 +11,10 @@ import { i18n } from '@/i18n/index.js';
 import { globalComponentSize } from '@/utils/componentSize.js';
 import VueCookies from 'vue-cookies'
 import Axios from 'axios'
+
+ 
+
+
 Vue.use(VueCookies);
 Vue.use(Particles);
 Vue.use(Element, { i18n: (key, value) => i18n.t(key, value), size: globalComponentSize });
