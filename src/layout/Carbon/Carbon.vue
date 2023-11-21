@@ -5,43 +5,19 @@
     </el-header>
     <el-main>
 
-      <splitpanes class="default-theme" horizontal :push-other-panes="false" style="height: 800px">
-        <!-- <pane>
-    <span>1</span>
-  </pane> -->
-        <pane>
-          <splitpanes :push-other-panes="false">
-            <pane>
-              <span>2</span>
-            </pane>
-            <pane>
-              <span>
-                <BaseOlMap v-bind:geoserverData="BaseMapData" ></BaseOlMap>
-              </span>
-            </pane>
-            <pane>
-              <span>4</span>
-            </pane>
-          </splitpanes>
-        </pane>
-        <pane>
-          <span>5</span>
-        </pane>
-      </splitpanes>
+    <mainpane></mainpane>
 
     </el-main>
   </el-container>
 </template>
 
 <script>
-// In your Vue component.
-import { Splitpanes, Pane } from 'splitpanes'
-import 'splitpanes/dist/splitpanes.css'
-import BaseOlMap from './Map.vue';
+
 import headtop from "./HeadTop.vue"
+import mainpane from "./MainPane.vue"
 export default {
 
-  components: { Splitpanes, Pane, headtop, BaseOlMap },
+  components: { headtop, mainpane },
   name: "MapContainer",
   data() {
     return {
@@ -65,7 +41,7 @@ export default {
         changeMapHeight:''
 
       },
-
+    
     };
   },
   methods: {
@@ -73,7 +49,8 @@ export default {
 
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
-    }
+    },
+    
 
   },
   mounted() {

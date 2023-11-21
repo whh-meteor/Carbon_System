@@ -76,7 +76,7 @@
         })
       });
       this.map.addLayer(mapconfig.TianMapZJ())
-      this.map.addLayer(mapconfig.LoadGlobeLand30To2020());
+    //   this.map.addLayer(mapconfig.LoadGlobeLand30To2020());
       //图层管理器
       const ctrl = new OlExtLayerSwitcher({
         collapsed: true,
@@ -161,7 +161,7 @@
           if (newVal.changeMapHeight) {
   
             this.mapStyle.height = newVal.changeMapHeight
-            console.log("地图容器高度" + this.mapStyle.height)
+            // console.log("地图容器高度" + this.mapStyle.height)
             //更新地图大小 撑满div容器
             this.map.updateSize()
           }
