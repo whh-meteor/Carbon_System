@@ -15,3 +15,7 @@
  #### 窗口分割组件
  npm i splitpanes@legacy 
  https://antoniandre.github.io/splitpanes/
+
+ #### 图表组件 Echarts
+ https://echarts.apache.org/examples/zh/index.html#chart-type-graphic
+ https://echarts.apache.org/examples/zh/editor.html?c=transparent-bar3d&gl=1

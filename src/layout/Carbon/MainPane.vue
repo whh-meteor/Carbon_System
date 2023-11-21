@@ -5,7 +5,7 @@
     <pane size="80">
       <splitpanes :push-other-panes="false"  @resize="resize">
         <pane size="25">
-          <span>2</span>
+         <collapse></collapse>
         </pane>
         <pane size="50" >
           <span>
@@ -35,12 +35,9 @@ import { Splitpanes, Pane } from 'splitpanes'
 import 'splitpanes/dist/splitpanes.css'
 import BaseOlMap from './Map.vue';
 import charts3dbar from "./3dCharts.vue"
-  var layer = new Array(); //map中的图层数组
-  var layerName = new Array(); //图层名称数组
-  var layerVisibility = new Array(); //图层可见属性数组
-  
+import collapse from "./CollapseInteraction.vue"
   export default {
-    components: { Splitpanes, Pane, BaseOlMap,charts3dbar},
+    components: { Splitpanes, Pane, BaseOlMap,charts3dbar,collapse},
     data () {
       return {
  
