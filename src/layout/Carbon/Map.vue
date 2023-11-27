@@ -38,7 +38,7 @@
   import { equalTo } from 'ol/format/filter';
   
   import OlExtLayerSwitcher from 'ol-ext/control/LayerSwitcher'
-//   import { controls } from "./controls.js";
+   import { controls } from "./controls.js";
   export default {
   
     props: ['geoserverData'],
@@ -82,8 +82,9 @@
         collapsed: true,
         trash: true,
       });
-      this.map.addControl(ctrl);
+      // this.map.addControl(ctrl);
       this.map2Parent()
+
       //设置显示两个滑动地图
     //   controls.swipe.addLayer(mapconfig.LoadGlobeLand30To2020());
     //   controls.swipe.addLayer(mapconfig.LoadGlobeLand30To2000(), true);

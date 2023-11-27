@@ -1,30 +1,51 @@
 <template>
-  <div :style="defaultHeightSide">
+  <div :style="defaultHeightSide" class="pane">
     <splitpanes class="default-theme" horizontal :push-other-panes="false" :style="contentHeight" @resize="resize">
 
       <pane size="90">
         <splitpanes :push-other-panes="false" @resize="resize">
-          <pane size="15">
+          <pane size="25">
+   
             <collapse></collapse>
+
+            <el-divider></el-divider>
+      <el-button @click="hidePane2 = !hidePane2">{{ hidePane2 ? 'Show' : 'Hide' }} Pane 2</el-button>
+            <el-button @click="hidePane3 = !hidePane3">{{ hidePane3 ? 'Show' : 'Hide' }} Pane 3</el-button>
+          
           </pane>
           <pane size="50">
             <span>
               <BaseOlMap v-bind:geoserverData="BaseMapData"></BaseOlMap>
             </span>
           </pane>
-          <pane size="35">
+          <pane size="25" v-if="!hidePane2">
             <span>
-              <charts3dbar></charts3dbar>
+              <div class="sidebar">
+                2022年逐月平均NPP
+              </div>
+              <div class="barcharts3d">
+                <charts3dbar></charts3dbar>
+              </div>
+              <el-divider></el-divider>
+              <div class="sidebar">
+                反演结果与采样植被固碳量对比
+              </div>
+              
+           <div>  <LineCharts></LineCharts></div>
             </span>
           </pane>
         </splitpanes>
       </pane>
-      <pane size="10">
-        chart
+      <pane size="10"  v-if="!hidePane3">
+        <!-- <div class="sidebar">
+                时间轴折线图
+              </div> -->
+<TimeChart></TimeChart>
       </pane>
+     
     </splitpanes>
 
-
+ 
 
 
 
@@ -37,9 +58,11 @@ import { Splitpanes, Pane } from 'splitpanes'
 import 'splitpanes/dist/splitpanes.css'
 import BaseOlMap from './Map.vue';
 import charts3dbar from "./3dCharts.vue"
+import LineCharts from "./LineChats.vue"
+import TimeChart from "./TimeCharts.vue"
 import collapse from "./CollapseInteraction.vue"
 export default {
-  components: { Splitpanes, Pane, BaseOlMap, charts3dbar, collapse },
+  components: { Splitpanes, Pane, BaseOlMap, charts3dbar, collapse,LineCharts ,TimeChart},
   data() {
     return {
 
@@ -72,8 +95,9 @@ export default {
         height: '800px',
       },
 
-
-
+      defaultHeightSide:'',
+      hidePane2:'',
+      hidePane3:''
     }
   },
   computed: {
@@ -176,6 +200,9 @@ export default {
 </script>
   
 <style scoped>
+
+
+
 .ant-layout {
   background: #fff;
 }
@@ -275,4 +302,33 @@ export default {
   padding-top: 20px;
 
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
-}</style>
+}
+
+
+.sidebar {
+  margin-left: 5px;
+  position: relative;
+  margin-top: 20px;
+
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.barcharts3d{
+/* margin-top:-50px; */
+margin-left: 20px;
+}
+
+.splitpanes__pane{
+  overflow-y: scroll;
+  
+}
+/**
+**隐藏pane滚动条
+**/
+.splitpanes__pane::-webkit-scrollbar {
+	display: none;
+}
+</style>

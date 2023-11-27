@@ -1,6 +1,6 @@
 <template>
-  <div class="line1">
-        <div id="line1" class="" style="width: 100%;height:500px;"></div>
+  <div class="line1"  >
+        <div id="bar3d" class="" style="height: 40vh;width: 40vw;" ></div>
     </div>
 </template>
 
@@ -11,83 +11,12 @@ import { init } from 'echarts/lib/echarts';
 
 export default {
     mounted(){
-            this.myChart = echarts.init(document.getElementById('line1'));
+            this.myChart = echarts.init(document.getElementById('bar3d'));
             this.initData();
         },
     data() {
         return {
-            option: {
-                tooltip: {},
-                visualMap: {
-                    max: 20,
-                    inRange: {
-                        color: [
-                            '#313695',
-                            '#4575b4',
-                            '#74add1',
-                            '#abd9e9',
-                            '#e0f3f8',
-                            '#ffffbf',
-                            '#fee090',
-                            '#fdae61',
-                            '#f46d43',
-                            '#d73027',
-                            '#a50026'
-                        ]
-                    }
-                },
-                xAxis3D: {
-                    type: 'category',
-                    data: hours
-                },
-                yAxis3D: {
-                    type: 'category',
-                    data: days
-                },
-                zAxis3D: {
-                    type: 'value'
-                },
-                grid3D: {
-                    boxWidth: 200,
-                    boxDepth: 80,
-                    light: {
-                        main: {
-                            intensity: 1.2
-                        },
-                        ambient: {
-                            intensity: 0.3
-                        }
-                    }
-                },
-                series: [
-                    {
-                        type: 'bar3D',
-                        data: data.map(function (item) {
-                            return {
-                                value: [item[1], item[0], item[2]]
-                            };
-                        }),
-                        shading: 'color',
-                        label: {
-                            show: false,
-                            fontSize: 16,
-                            borderWidth: 1
-                        },
-                        itemStyle: {
-                            opacity: 0.4
-                        },
-                        emphasis: {
-                            label: {
-                                fontSize: 20,
-                                color: '#900'
-                            },
-                            itemStyle: {
-                                color: '#900'
-                            }
-                        }
-                    }
-                ]
-            },
+         
 
         }
     },
@@ -177,7 +106,9 @@ var option = {
   ]
 };
 this.myChart.setOption(option);
-
+window.addEventListener('resize', function () {
+  this.myChart.resize();
+  })
 
         }
     }
